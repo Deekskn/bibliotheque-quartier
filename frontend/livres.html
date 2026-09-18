@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Livres - Bibliothèque de quartier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top-bar">
+  <h1>Bibliothèque de quartier</h1>
+  <nav class="main-nav">
+    <a href="index.html">Tableau de bord</a>
+    <a href="livres.html" class="actif">Livres</a>
+    <a href="auteurs.html">Auteurs</a>
+    <a href="adherents.html">Adhérents</a>
+    <a href="emprunts.html">Emprunts</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Livres</h2>
+
+  <div class="carte">
+    <h3 id="titre-formulaire">Ajouter un livre</h3>
+    <div class="message-erreur" id="erreur-form"></div>
+    <div class="message-succes" id="succes-form"></div>
+    <form class="formulaire" id="form-livre">
+      <input type="hidden" id="livre-id">
+      <label>Titre
+        <input type="text" id="livre-titre" required>
+      </label>
+      <label>Auteur
+        <select id="livre-auteur" required>
+          <option value="">-- Choisir un auteur --</option>
+        </select>
+      </label>
+      <label>Année de publication
+        <input type="number" id="livre-annee" min="0" max="2100">
+      </label>
+      <div class="barre-outils">
+        <button type="submit" id="bouton-submit">Ajouter</button>
+        <button type="button" class="secondaire" id="bouton-annuler" style="display:none;">Annuler</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="carte">
+    <div class="barre-outils">
+      <input type="text" id="champ-recherche" placeholder="Rechercher par titre ou auteur...">
+      <button type="button" id="bouton-recherche">Rechercher</button>
+      <button type="button" class="secondaire" id="bouton-reinit-recherche">Réinitialiser</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Auteur</th>
+          <th>Année</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="corps-tableau-livres">
+        <tr><td colspan="5" class="vide">Chargement...</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pagination" id="zone-pagination"></div>
+  </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/livres.js"></script>
+</body>
+</html>

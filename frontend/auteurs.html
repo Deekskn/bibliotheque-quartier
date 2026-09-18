@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Auteurs - Bibliothèque de quartier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top-bar">
+  <h1>Bibliothèque de quartier</h1>
+  <nav class="main-nav">
+    <a href="index.html">Tableau de bord</a>
+    <a href="livres.html">Livres</a>
+    <a href="auteurs.html" class="actif">Auteurs</a>
+    <a href="adherents.html">Adhérents</a>
+    <a href="emprunts.html">Emprunts</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Auteurs</h2>
+
+  <div class="carte">
+    <h3 id="titre-formulaire">Ajouter un auteur</h3>
+    <div class="message-erreur" id="erreur-form"></div>
+    <div class="message-succes" id="succes-form"></div>
+    <form class="formulaire" id="form-auteur">
+      <input type="hidden" id="auteur-id">
+      <label>Nom
+        <input type="text" id="auteur-nom" required>
+      </label>
+      <label>Prénom
+        <input type="text" id="auteur-prenom" required>
+      </label>
+      <label>Nationalité
+        <input type="text" id="auteur-nationalite">
+      </label>
+      <div class="barre-outils">
+        <button type="submit" id="bouton-submit">Ajouter</button>
+        <button type="button" class="secondaire" id="bouton-annuler" style="display:none;">Annuler</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="carte">
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Nationalité</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="corps-tableau-auteurs">
+        <tr><td colspan="4" class="vide">Chargement...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auteurs.js"></script>
+</body>
+</html>

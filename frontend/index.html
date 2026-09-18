@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Tableau de bord - Bibliothèque de quartier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top-bar">
+  <h1>Bibliothèque de quartier</h1>
+  <nav class="main-nav">
+    <a href="index.html" class="actif">Tableau de bord</a>
+    <a href="livres.html">Livres</a>
+    <a href="auteurs.html">Auteurs</a>
+    <a href="adherents.html">Adhérents</a>
+    <a href="emprunts.html">Emprunts</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Tableau de bord</h2>
+
+  <div class="grille-stats" id="grille-stats">
+    <div class="stat-carte"><div class="valeur">-</div><div class="libelle">Livres</div></div>
+    <div class="stat-carte"><div class="valeur">-</div><div class="libelle">Adhérents</div></div>
+    <div class="stat-carte"><div class="valeur">-</div><div class="libelle">Emprunts en cours</div></div>
+    <div class="stat-carte"><div class="valeur">-</div><div class="libelle">Emprunts en retard</div></div>
+  </div>
+
+  <div class="carte">
+    <h3>Livre le plus emprunté</h3>
+    <p id="livre-plus-emprunte">Chargement...</p>
+  </div>
+
+  <div class="carte">
+    <h3>Adhérent le plus actif</h3>
+    <p id="adherent-plus-actif">Chargement...</p>
+  </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

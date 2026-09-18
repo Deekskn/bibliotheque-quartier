@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Emprunts - Bibliothèque de quartier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top-bar">
+  <h1>Bibliothèque de quartier</h1>
+  <nav class="main-nav">
+    <a href="index.html">Tableau de bord</a>
+    <a href="livres.html">Livres</a>
+    <a href="auteurs.html">Auteurs</a>
+    <a href="adherents.html">Adhérents</a>
+    <a href="emprunts.html" class="actif">Emprunts</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Emprunts</h2>
+
+  <div class="carte">
+    <h3>Nouvel emprunt</h3>
+    <div class="message-erreur" id="erreur-form"></div>
+    <div class="message-succes" id="succes-form"></div>
+    <form class="formulaire" id="form-emprunt">
+      <label>Livre
+        <select id="emprunt-livre" required>
+          <option value="">-- Choisir un livre disponible --</option>
+        </select>
+      </label>
+      <label>Adhérent
+        <select id="emprunt-adherent" required>
+          <option value="">-- Choisir un adhérent --</option>
+        </select>
+      </label>
+      <label>Retour prévu le
+        <input type="date" id="emprunt-date-retour" required>
+      </label>
+      <div class="barre-outils">
+        <button type="submit" id="bouton-submit">Enregistrer l'emprunt</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="carte">
+    <div class="barre-outils">
+      <button type="button" class="filtre actif" data-filtre="tous">Tous</button>
+      <button type="button" class="filtre" data-filtre="en_cours">En cours</button>
+      <button type="button" class="filtre" data-filtre="en_retard">En retard</button>
+      <button type="button" class="filtre" data-filtre="rendu">Rendus</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Livre</th>
+          <th>Adhérent</th>
+          <th>Date d'emprunt</th>
+          <th>Retour prévu</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="corps-tableau-emprunts">
+        <tr><td colspan="6" class="vide">Chargement...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/emprunts.js"></script>
+</body>
+</html>
